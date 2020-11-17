@@ -1,5 +1,10 @@
 .search {
   display: flex;
+  width: 50%;
+  transition: width .5s ease;
+}
+
+.search.full-width {
   width: 100%;
 }
 

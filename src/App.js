@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+import { Search } from './components/search';
+import { Visualizer } from './components/visualizer';
+import { Sidebar } from './components/sidebar';
+import { getDocuments } from './api';
 
 function App() {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    getDocuments()
+      .then(({ data }) => setItems(data));
+  }, []);
+
+  function search(searchValue) {
+    getDocuments(searchValue)
+      .then(({ data }) => setItems(data));
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="header">
+        <Search onSearch={search} />
+      </div>
+      <Visualizer items={items} />
+      <Sidebar items={items} />
     </div>
   );
 }

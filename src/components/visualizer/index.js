@@ -8,7 +8,7 @@ export function Visualizer({ items, selectedItem }){
   useEffect(() => {
     const images = items.reduce((acc, item) => {
       Object.keys(item).forEach((key) => {
-        if (Array.isArray(item[key]) && item[key][0].file) {
+        if (Array.isArray(item[key]) && item[key][0]?.file) {
           item[key].forEach((itemImage) => {
             acc.push(itemImage.file);
           });
