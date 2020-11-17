@@ -1,0 +1,52 @@
+.sidebar__group {
+  margin-bottom: 3rem;
+  transform: translateZ(0);
+}
+.sidebar__group__title {
+  display: table;
+  padding-left: 3rem;
+  text-transform: uppercase;
+  font-family: 'MSemiBold';
+  color: #a9a9a9;
+  margin-bottom: 0.5rem;
+  font-size: 0.975rem;
+  letter-spacing: 1px;
+}
+.sidebar__group__item {
+  margin: auto;
+  transition: all 0.4s cubic-bezier(0.15, 0.9, 0.34, 0.95);
+  width: 100%;
+  transform: translateZ(0);
+  max-height: 5rem;
+  position: relative;
+  display: block;
+}
+
+.sidebar__group__item.active {
+  box-shadow: -9px 10px 17px 0px #f3f3f3;
+  width: 90%;
+  max-height: 15rem;
+  padding-top: 1.5rem;
+  z-index: 2;
+}
+
+.sidebar__group__item__title {
+  cursor: pointer;
+  display: table;
+  width: 100%;
+  font-size: 1.4rem;
+  padding-left: 3rem;
+  padding-top: 1.4rem;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1.4rem;
+  font-family: 'MMedium';
+  color: #313131;
+  position: relative;
+  transition: all 0.2s cubic-bezier(0.15, 0.9, 0.34, 0.95);
+  transform: translate3d(0, 0, 0);
+}
+
+.sidebar__group__item__title:hover {
+  background-color: #f6f6f6;
+  border-color: #f6f6f6;
+}
