@@ -5,7 +5,9 @@ export default {
   component: Search,
 };
 
-const Template = (args) => <div style={{width: '50%', margin: 'auto'}}><Search {...args} /></div>;
+const containerStyles = {width: '50%', margin: 'auto'};
+
+const Template = (args) => <div style={containerStyles}><Search {...args} /></div>;
 
 export const Default = Template.bind({});
 Default.args = {
