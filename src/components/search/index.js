@@ -6,16 +6,26 @@ import './search.css';
 
 export function Search({ onSearch }) {
   const [search, setSearch] = useState('');
+  const [isFullWidth, setIsFullWidth] = useState(false);
+
+  function changeSize() {
+    setIsFullWidth(true);
+  }
+
+  function onClickSearch() {
+    onSearch(search);
+  }
 
   return (
-    <div className="search">
+    <div className={['search', isFullWidth ? 'full-width' : ''].join(' ')}>
       <Input
         placeholder="Input filter parameter"
         value={search}
         onChange={setSearch}
+        onFocus={changeSize}
       />
       <Button
-        onClick={onSearch}
+        onClick={onClickSearch}
         label="Search"
       />
     </div>

@@ -1,10 +1,10 @@
 .sidebar {
   position: fixed;
   right: 0;
-  top: 0;
+  top: 57px;
   height: 100%;
   overflow: auto;
   width: 320px;
-  padding-top: 7.5rem;
+  padding-top: 2.5rem;
   transform: translateZ(0);
 }

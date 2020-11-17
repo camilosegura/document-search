@@ -25,7 +25,7 @@ export function Sidebar({ items, onClick }) {
           {Object.keys(item).map((key) => {
             const isActive = index === itemIndexSelected && groupItemSelected.title === key;
 
-            return Array.isArray(item[key]) && item[key][0].name && (
+            return Array.isArray(item[key]) && item[key][0]?.name && (
               <SidebarGroup
                 title={key}
                 items={item[key]}
