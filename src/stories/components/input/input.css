@@ -1,0 +1,10 @@
+input {
+  border-radius: 5px;
+  color: #303030;
+  font-family: 'MSemiBold';
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 1rem 1.5rem;
+  border: 1px solid #f6f6f6;
+}
