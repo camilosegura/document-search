@@ -8,6 +8,7 @@
   text-transform: uppercase;
   padding: 1rem 1.5rem;
   border: none;
+  cursor: pointer;
 }
 
 .btn--secondary {
