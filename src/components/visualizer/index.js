@@ -1,16 +1,21 @@
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import { Dot } from '../dot';
 import './visualizer.css';
 
 export function Visualizer({ items, selectedItem }){
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    const images = items.reduce((acc, item) => {
+    const images = items.reduce((acc, item, index) => {
       Object.keys(item).forEach((key) => {
         if (Array.isArray(item[key]) && item[key][0]?.file) {
-          item[key].forEach((itemImage) => {
-            acc.push(itemImage.file);
+          item[key].forEach((itemImage, indexItem) => {
+            const isSelected = selectedItem.index === index
+              && key === selectedItem.groupItemTitle
+              && selectedItem.groupItemIndex === indexItem;
+
+            acc.push({ file: itemImage.file, selected: isSelected });
           });
         }
       });
@@ -19,14 +24,15 @@ export function Visualizer({ items, selectedItem }){
     }, []);
 
     setImages(images);
-  }, [items]);
+  }, [items, selectedItem]);
 
   return (
     <main className="main">
       <div className="main__content">
         {images.map((image, index) => (
-          <div className="main__content__img" style={{"--animation-order": index}}>
-            <img key={image} src={`http://localhost:4000/${image}`} />
+          <div key={image.file} className="main__content__img" style={{"--animation-order": index}}>
+            <img src={`http://localhost:4000/${image.file}`} />
+            { image.selected && <Dot /> }
           </div>
         ))}
       </div>

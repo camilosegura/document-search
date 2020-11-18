@@ -4,7 +4,7 @@ import './sidebar-group.css';
 export function SidebarGroup({ title, items, active, onClick }) {
   return (
     <div className="sidebar__group">
-      <span class="sidebar__group__title">{title}</span>
+      <span className="sidebar__group__title">{title}</span>
       {items.map((item, index) => (
         <span
           key={item.name}

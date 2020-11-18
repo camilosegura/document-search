@@ -20,13 +20,14 @@ export function Sidebar({ items, onClick }) {
     <aside className="sidebar">
       <Heading label="Results" />
       {items.map((item, index) => (
-        <div>
+        <div key={item.summary}>
           <Heading label={item.summary} secondary />
           {Object.keys(item).map((key) => {
             const isActive = index === itemIndexSelected && groupItemSelected.title === key;
 
             return Array.isArray(item[key]) && item[key][0]?.name && (
               <SidebarGroup
+                key={key}
                 title={key}
                 items={item[key]}
                 active={ isActive ? groupItemSelected.index : -1 }

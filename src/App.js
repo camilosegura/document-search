@@ -7,6 +7,7 @@ import { getDocuments } from './api';
 
 function App() {
   const [items, setItems] = useState([]);
+  const [selectedItem, setSelectedItem] = useState({});
 
   useEffect(() => {
     getDocuments()
@@ -18,13 +19,17 @@ function App() {
       .then(({ data }) => setItems(data));
   }
 
+  function onClickItem(index, groupItemTitle, groupItemIndex) {
+    setSelectedItem({ index, groupItemTitle, groupItemIndex });
+  }
+
   return (
     <div className="App">
       <div className="header">
         <Search onSearch={search} />
       </div>
-      <Visualizer items={items} />
-      <Sidebar items={items} />
+      <Visualizer items={items} selectedItem={selectedItem} />
+      <Sidebar items={items} onClick={onClickItem} />
     </div>
   );
 }
