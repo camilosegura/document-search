@@ -36,3 +36,6 @@ In your browser you can use the search input to filter by **flag**, **problems**
 * Create autentication
 * Publish it in a public URL
 * Show the main document when click on a clipping
+* Add linter
+* Add test cases
+* Add CI/CD
