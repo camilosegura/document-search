@@ -1,6 +1,6 @@
 # Document Search
 
-Document Search is a React project which shows a summary of medical information in image clippings.  The components were built using Storybook.  The API for this project is in [Document Search API](https://github.com/camilosegura/document-search-api), read its documentation to know how to run it in your local machine.
+Document Search is a React project which shows a summary of medical information in image clippings (it solves the **Visualization** challenge).  The components were built using Storybook.  The API for this project is in [Document Search API](https://github.com/camilosegura/document-search-api), read its documentation to know how to run it in your local machine.
 
 ## Installation
 
